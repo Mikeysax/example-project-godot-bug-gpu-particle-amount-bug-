@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfyft74srw2fi"]
+
+[sub_resource type="Curve" id="Curve_5g172"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ho5nf"]
+curve = SubResource("Curve_5g172")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vi8v2"]
+scale_curve = SubResource("CurveTexture_ho5nf")
+
+[sub_resource type="TorusMesh" id="TorusMesh_51anm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_vi8v2")
+draw_pass_1 = SubResource("TorusMesh_51anm")
